@@ -3,7 +3,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from .models import teachers
 from .models import students
 from django.views.generic.edit import CreateView
-from .form import InputForm
+from .forms import InputForm
 
 def index(request):
    return render(request, 'Pages/Home.html')
@@ -63,7 +63,24 @@ def Teachers_new(request):
         form = InputForm()
         return render (request, "pages/Teachers_new.html", {'form': form})
     
+# def loginView(request):
+#     if request.method == "POST":
+#         form = Login(request.POST)
+#         if form.is_valid():
+#             # post = teachers()
+#             # post.msgv = request.POST['msgv']
+#             # post.name = request.POST['name']
+#             # post.email = request.POST['email']
+#             # post.phone = request.POST['phone']
+#             # post.date = request.POST['date']
+#             # post.gender = request.POST['gender']
 
+#             post.save()
+#             return render(request, 'Pages/Home.html')
+    
+#     else: 
+#         form = InputForm()
+#         return render (request, "pages/Teachers_new.html", {'form': form})
     
 
 

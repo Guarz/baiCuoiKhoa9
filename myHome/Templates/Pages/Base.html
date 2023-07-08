@@ -18,9 +18,15 @@
 
 <body>
     <!-- Nội dung -->
-    {% block content %}
+    <!-- {% block content %}
 
-    {% endblock %}
+    {% endblock %} -->
+    {% if user.is_authenticated %}
+    Hi {{ user.username }}!
+    {% else %}
+    <p>You are not logged in</p>
+    <a href="{% url 'login' %}">Log In</a>
+    {% endif %}
 </body>
 
 </html>
